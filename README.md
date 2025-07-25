@@ -48,17 +48,22 @@ CREATE TABLE sql_project_1.retail_sales
 - **Category Count**: Identify all unique product categories in the dataset.
 - **Null Value Check**: Check for any null values in the dataset and delete records with missing data.
 
-'''sql
 -- 1. How many sales do we have?
+'''sql
 SELECT COUNT(*) AS total_sale FROM sql_project_1.retail_sales;
-
+'''
 -- 2. How many unique customers do we have?
+'''sql
 SELECT COUNT(DISTINCT(CUSTOMER_ID)) AS total_customers FROM sql_project_1.retail_sales;
+'''
 
 -- 3. How many categories do we have?
+'''sql
 SELECT DISTINCT(CATEGORY) AS Categories FROM sql_project_1.retail_sales;
+'''
 
 --4. Checking for any null values and deleting all the null values
+'''sql
 select * from sql_project_1.retail_sales
 where transactions_id is null
 OR
